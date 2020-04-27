@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static('public'));
 // Installed the ejs and created a file inside the views
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // Set up a route for the App
