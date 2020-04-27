@@ -19,7 +19,17 @@ app.get('/', function(req, res) {
     });
 });
 
+// App.post option
+app.post("/addNotes", function(req, res) {
+    const userNote = {};
 
+    userNote.id = Math.random() * 100;
+    userNote.body = req.body.newNote;
+
+    note.push(userNote);
+
+    res.redirect('/');
+});
 
 app.listen(5000, function() {
     console.log("Notes App server is running at port 5000")
