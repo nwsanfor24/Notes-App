@@ -10,3 +10,7 @@ app.use(bodyParser.urlencoded({
 
 // Installed the ejs and created a file inside the views
 app.set('view engine', 'ejs');
+
+app.listen(5000, function() {
+    console.log("Notes App server is running at port 5000")
+});
