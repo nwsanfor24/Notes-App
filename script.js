@@ -31,6 +31,16 @@ app.post("/addNotes", function(req, res) {
     res.redirect('/');
 });
 
+// Handling the delete request
+app.post('/deleteNote/:id', function(req, res) {
+    console.log(req.params.id);
+
+    const deleteNotes = note.filter(item => item.id != req.params.id);
+    note = deleteNotes;
+
+    return res.redirect('/');
+});
+
 app.listen(5000, function() {
     console.log("Notes App server is running at port 5000")
 });
