@@ -8,8 +8,18 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+app.use(express.static('public'));
 // Installed the ejs and created a file inside the views
 app.set('view engine', 'ejs');
+
+// Set up a route for the App
+app.get('/', function(req, res) {
+    res.render('notes', {
+        note: note
+    });
+});
+
+
 
 app.listen(5000, function() {
     console.log("Notes App server is running at port 5000")
