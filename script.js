@@ -1,6 +1,7 @@
 // Declare the installed frameworks
 const express = require('express');
 const bodyParser = require('body-parser');
+const router = express.Router();
 
 let note = [{ id: 1, body: 'We have a text' }, { id: 2, body: 'This is a second text' }];
 
@@ -16,7 +17,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // Set up a route for the App
-app.get('/', function(req, res) {
+router.get('/', function(req, res) {
     res.render('notes', {
         note: note
     });
